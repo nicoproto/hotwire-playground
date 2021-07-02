@@ -1,18 +1,11 @@
-
-
 <div class="w-1/2	mx-auto">
   <h1>Tweets</h1>
 
   <%= render 'form', tweet: @tweet %>
 
-  <% @tweets.each do |tweet| %>
-    <div class="p-3 border mb-3">
-      <p><%= tweet.likes_count %></p>
-      <p><%= tweet.retweets_count %></p>
-      <p><%= tweet.body %></p>
-      <%= link_to 'Edit', edit_tweet_path(tweet) %>
-      <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
+  <%= turbo_stream_from "tweets" %>
 
+  <%= turbo_frame_tag "tweets" do %>
+    <%= render @tweets %>
   <% end %>
 </div>
