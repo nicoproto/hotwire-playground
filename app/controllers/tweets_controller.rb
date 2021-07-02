@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
   before_action :set_tweet, only: %i[ show edit update destroy ]
 
   # GET /tweets or /tweets.json
