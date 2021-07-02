@@ -23,7 +23,8 @@ import "../stylesheets/application"
 // import { initSelect2 } from '../components/init_select2';
 import initAlerts from '../components/initAlerts';
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbo:load', () => {
+  console.log("Turbo!")
   // Call your functions here, e.g:
   // initSelect2();
   initAlerts();
