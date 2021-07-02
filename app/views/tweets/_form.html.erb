@@ -1,4 +1,4 @@
-<%= simple_form_for @tweet do |f| %>
+<%= simple_form_for tweet, html: { id: dom_id(tweet) } do |f| %>
   <%= f.input :body %>
   <%= f.submit %>
 <% end %>

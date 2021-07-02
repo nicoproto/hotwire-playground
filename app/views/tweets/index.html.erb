@@ -1,9 +1,12 @@
 <div class="w-1/2	mx-auto">
   <h1>Tweets</h1>
 
-  <%= render 'form', tweet: @tweet %>
-
   <%= turbo_stream_from "tweets" %>
+
+  <%= turbo_frame_tag "tweet_form" do %>
+    <%= render 'form', tweet: @tweet %>
+  <% end %>
+
 
   <%= turbo_frame_tag "tweets" do %>
     <%= render @tweets %>

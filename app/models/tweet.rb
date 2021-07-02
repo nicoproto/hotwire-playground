@@ -1,5 +1,5 @@
 class Tweet < ApplicationRecord
-  validates :body, presence: true
+  validates :body, presence: true, length: { minimum: 5 }
 
   after_create_commit { broadcast_prepend_to 'tweets' }
   after_update_commit { broadcast_replace_to 'tweets' }
