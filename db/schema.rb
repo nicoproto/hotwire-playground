@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_07_02_122214) do
   enable_extension "plpgsql"
 
   create_table "tweets", force: :cascade do |t|
-    t.integer "likes_count"
-    t.integer "retweets_count"
+    t.integer "likes_count", default: 0
+    t.integer "retweets_count", default: 0
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
