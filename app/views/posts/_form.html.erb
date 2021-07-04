@@ -1,5 +1,5 @@
 <%= turbo_frame_tag post do %>
-  <%= simple_form_for post do |f| %>
+  <%= simple_form_for post, data: { "turbo-frame": "_top" } do |f| %>
     <%= f.input :title %>
     <%= f.input :body %>
     <%= f.submit %>
